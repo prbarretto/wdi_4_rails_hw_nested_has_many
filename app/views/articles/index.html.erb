@@ -1,0 +1,8 @@
+<h1>Article List</h1>
+
+<% @articles.each do |article| %><br>
+	<%= link_to article.title %>
+<% end %>
+
+<h1>All Users</h1>
+<%= link_to 'User List', users_path %>
