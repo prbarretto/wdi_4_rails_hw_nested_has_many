@@ -1,6 +1,6 @@
 <h2>New Comment</h2>
 
-<%= form_for [@article, @comment] do |form| %>
+<%= form_for [@user, @article, @comment] do |form| %>
   <%= form.label :body, 'Enter comment' %>
   <p><%= form.text_area :body, rows: 10, cols: 80, placeholder: 'Enter your comment here.' %></p>
   <p><%= form.submit %><p>
