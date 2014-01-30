@@ -9,17 +9,14 @@ class ArticlesController < ApplicationController
 
 	def edit
 		@article = Article.find(params[:id])
+		@user = User.find(params[:user_id])
 	end
 
 	def update
-		@article = Article.new(article_params)
-		if article.save
-			flash[:notice] = 'Your article has been updated.'
-			redirect_to @article
-		else
-			flash.now[:error] = @article.errors.full_messages
-      render :edit
-    end
+		@user = User.find(params[:user_id])
+		@article = Article.find(params[:id])
+		@article.update_attributes(article_params)
+		redirect_to user_path(@user.id)
 	end
 
 	def new
