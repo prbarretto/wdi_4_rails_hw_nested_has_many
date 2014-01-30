@@ -1,0 +1,9 @@
+<h1>Article View</h1>
+
+<h2><%= @article.title %></h2>
+	<p><%= @article.body %></p>
+
+<p>
+  <%= link_to 'New Article', new_user_article_path %>
+  <%= link_to 'Edit Article?', edit_user_article_path(@article.user_id, @article.id) %>
+</p>
