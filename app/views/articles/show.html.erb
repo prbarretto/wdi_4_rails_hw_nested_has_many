@@ -7,3 +7,8 @@
   <%= link_to 'Edit Article', edit_user_article_path(@article.user_id, @article.id) %>
   <%= link_to 'Add a Comment', new_user_article_comment_path(@article.user_id, @article.id) %>
 </p>
+
+<h4>Comments</h4>
+<% @article.comments.each do |comment| %><br>
+	<%= comment.body %>
+<% end %>

@@ -13,6 +13,9 @@ class CommentsController < ApplicationController
 		redirect_to user_article_path(@user.id, @article.id)
 	end
 
+	def show
+	end
+
 	private
 
 	def comment_params
