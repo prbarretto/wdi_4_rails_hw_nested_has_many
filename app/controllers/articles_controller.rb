@@ -1,13 +1,7 @@
 class ArticlesController < ApplicationController
 
-	before_action :get_user
 
-	def index
-		if !@user
-			@articles = Article.all
-		else
-			@articles = @user.articles
-	end
+
 
 	def show
 		@article = Article.find(params[:id])
@@ -29,12 +23,14 @@ class ArticlesController < ApplicationController
 	end
 
 	def new
-		@article = Article.new
+  	@user = User.find(params[:user_id])
+  	@article = Article.new
 	end
 
 	def create
-   @user.articles << Article.create!(article_params)
-   redirect_to article_path(@user.id)
+		@user = User.find(params[:user_id])
+    @user.articles << article = Article.create!(article_params)
+    redirect_to user_path(@user.id)
   end
 
 	private

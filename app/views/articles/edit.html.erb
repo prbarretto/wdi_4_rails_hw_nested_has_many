@@ -1,6 +1,6 @@
 <h2>Edit Article</h2>
 
-<%= form_for @articles do |form| %>
+<%= form_for([@article_id]) do |form| %>
   <%= form.label :title, 'Enter title' %>
   <p><%= form.text_field :title, placeholder: 'Enter title' %></p>
   <%= form.label :body, 'Enter article' %>

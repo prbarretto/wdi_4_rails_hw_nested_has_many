@@ -2,8 +2,8 @@
 
 <%= form_for [@user, @article] do |form| %>
   <%= form.label :title, 'Enter title' %>
-  <p><%= form.text_field :title, placeholder: 'Enter title' %></p>
+  <p><%= form.text_field :title, placeholder: 'Title' %></p>
   <%= form.label :body, 'Enter article' %>
-  <p><%= form.text_area :comment, rows: 10, cols: 80, placeholder: 'Enter your article here.' %></p>
+  <p><%= form.text_area :body, rows: 10, cols: 80, placeholder: 'Enter your article here.' %></p>
   <p><%= form.submit %><p>
 <% end %>
