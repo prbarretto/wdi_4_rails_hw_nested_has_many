@@ -3,7 +3,7 @@
 	<h2><%= @user.name %></h2>
 	<% @user.articles.each do |article| %>
   <h3><%= link_to article.title, user_article_path(@user.id, article.id) %></h3>
-  	<p><%= truncate(article.body, length: 100) %></p>
+  	<p><%= truncate(article.body, length: 25) %></p>
   <% end %>
 
 <%= link_to 'New Article', new_user_article_path(@user.id) %>

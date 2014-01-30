@@ -4,7 +4,7 @@ SharedBlog::Application.routes.draw do
       resources :comments
     end
   end
-  root to: "articles#index"
+  root to: "users#index"
 
 
 
